@@ -21,7 +21,7 @@ Features:
 
 ## Editing Slide Content
 
-Each header in _content.md_ is a slide. Text after the header is shown in the notes section. CSS after the header is displayed on the slide so that the reader can see it. this is referred to as the "Display CSS".
+Each header in _content.md_ is a slide. Text after the header is shown in the notes section. CSS after the header is displayed on the slide so that the reader can see it. This is referred to as the "Display CSS".
 
 ### Example Details
 
