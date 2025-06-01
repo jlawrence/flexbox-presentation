@@ -19,6 +19,15 @@ body {
     box-sizing: border-box;
 }
 
+a:focus,
+button:focus {
+    outline: dotted 2px white;
+}
+
+.slide-buttons__link:focus {
+    border: dotted 2px white;
+}
+
 .nav {
     border-right: solid 2px black;
     overflow: auto;
@@ -30,6 +39,22 @@ body {
 .body--presenting .nav,
 .body--presenting .notes {
     display: none;
+}
+
+.slide__present-button {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 30px;
+    border: 0;
+    padding: 0;
+    background: transparent;
+    color: white;
+    font-size: 20px;
+    margin: 5px;
+    cursor: pointer;
+    width: 25px;
+    display: inline-block;
 }
 
 .slide__present-button__menu-icon {
@@ -62,6 +87,7 @@ body {
     text-decoration: none;
     margin: 10px;
     cursor: pointer;
+    border: solid 2px #ccc;
 }
 
 .slide-buttons__link--prev {
@@ -140,21 +166,6 @@ body {
 
 .slide--level2 .slide__title h1 {
     font-size: 40px;
-}
-
-.slide__present-button {
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 30px;
-    width: 15px;
-    border: 0;
-    padding: 0;
-    background: transparent;
-    color: white;
-    font-size: 20px;
-    margin: 5px;
-    cursor: pointer;
 }
 
 .slide__body {

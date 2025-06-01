@@ -19,12 +19,14 @@
                     class="slide-buttons__link slide-buttons__link--prev"
                     id="previousSlideButton"
                     href="$previousSlideIndex"
+                    tabindex="1"
                     >Prev</a
                 >
                 <a
                     class="slide-buttons__link slide-buttons__link--next"
                     id="nextSlideButton"
                     href="$nextSlideIndex"
+                    tabindex="2"
                     >Next</a
                 >
             </div>
@@ -38,7 +40,9 @@
                     <button
                         class="slide__present-button"
                         id="presentButton"
-                        aria-label="toggle presentation mode"
+                        aria-label="Toggle presentation mode"
+                        title="Toggle presentation mode"
+                        tabindex="3"
                     >
                         <span class="slide__present-button__menu-icon"
                             >&#x2630;</span

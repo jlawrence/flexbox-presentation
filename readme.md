@@ -6,9 +6,15 @@ Features:
 
 - Use arrow keys to navigate slides
 
+## Installation
+
+- Clone this repository
+- Install [Node.js](https://nodejs.org/en)
+- From a terminal window, `cd` to the root of this repository.
+- Enter this command: `npm i`
+
 ## Usage
 
-- Install Node.js
 - From a terminal window, `cd` to the root of this repository.
 - Enter this command: `npm start`
 - Go to <http://localhost:3000> in a web browser
