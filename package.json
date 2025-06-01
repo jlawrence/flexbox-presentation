@@ -1,0 +1,15 @@
+{
+    "name": "flexbox-presentation",
+    "version": "1.0.0",
+    "type": "module",
+    "scripts": {
+        "start": "node index.js",
+        "format": "npx prettier . --write"
+    },
+    "author": "Joshua Lawrence",
+    "dependencies": {
+        "express": "^4.21.1",
+        "marked": "^15.0.7",
+        "prettier": "^3.5.3"
+    }
+}

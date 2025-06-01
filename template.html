@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Presentation</title>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" href="/fonts/Inter-4.0/web/inter.css" />
+        <link
+            rel="stylesheet"
+            href="/fonts/Inconsolata/static/inconsolata.css"
+        />
+        <link rel="stylesheet" href="style.css" />
+        <script src="main.js"></script>
+    </head>
+
+    <body style="visibility: hidden">
+        <nav class="nav">
+            <div class="slide-buttons">
+                <a
+                    class="slide-buttons__link slide-buttons__link--prev"
+                    id="previousSlideButton"
+                    href="$previousSlideIndex"
+                    >Prev</a
+                >
+                <a
+                    class="slide-buttons__link slide-buttons__link--next"
+                    id="nextSlideButton"
+                    href="$nextSlideIndex"
+                    >Next</a
+                >
+            </div>
+            <ol class="slide-list">
+                $slideListItems
+            </ol>
+        </nav>
+        <main class="main">
+            <div class="slide slide--level$slideLevel">
+                <div class="slide__title">
+                    <button
+                        class="slide__present-button"
+                        id="presentButton"
+                        aria-label="toggle presentation mode"
+                    >
+                        <span class="slide__present-button__menu-icon"
+                            >&#x2630;</span
+                        >
+                        <span class="slide__present-button__maximize-icon"
+                            >&#x1F5D6;</span
+                        >
+                    </button>
+                    <h1>$slideTitle</h1>
+                </div>
+                <div class="slide__body">
+                    <div class="slide__css">$displayCss</div>
+                    <div class="slide__example">
+                        <div>$example</div>
+                    </div>
+                </div>
+            </div>
+            <div class="notes">$notes</div>
+        </main>
+    </body>
+</html>
