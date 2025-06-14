@@ -355,16 +355,24 @@ Example Details:
 
 ### Flex-Shrink
 
-By default, flex-shrink is 1, which means that items in a flex container will shrink when there isn't enough room in the flex container. But I want to prevent the degrees Farenheit from wrapping. I can prevent the low-temperature div from shrinking by setting flex-shrink to 0. I'll leave high-temperature with a flex-shrink of 1 so that you can see the difference.
+By default, flex-shrink is 1, which means that items in a flex container will shrink when there isn't enough space in the flex container. In this case I set the flex-shrink of Earth to 0, so it will maintain its original size, even in the smaller container.
 
 ```css
-.low-temperature {
-    flex-shrink: 0;
+.card1 {
+    width: 700px;
 }
 
-.high-temperature {
+.card2 {
+    width: 400px;
+}
+
+.planet {
     flex-shrink: 1; /* default */
 }
+
+.earth {
+    flex-shrink: 0;
+}
 ```
 
 Example Details:
@@ -373,84 +381,14 @@ Example Details:
 .card {
     display: flex;
     border: solid 3px maroon;
-    width: 400px;
-    height: 200px;
-}
-
-.card-large {
     width: 600px;
-}
-
-.description {
-    background: white;
-}
-
-.low-temperature {
-    background: cornflowerblue;
-}
-
-.high-temperature {
-    background: tomato;
-}
-
-.description,
-.low-temperature,
-.high-temperature {
-    padding: 5px;
-}
-
-.low-temperature,
-.high-temperature {
-    color: white;
-}
-```
-
-```html
-<h3>Plenty of Space</h3>
-<div class="card card-large">
-    <img class="planet" src="images/mars.jpg" />
-    <div class="description">Mars is the fourth planet from the sun.</div>
-    <div class="low-temperature">-225 °F</div>
-    <div class="high-temperature">70 °F</div>
-</div>
-
-<h3>Not Enough Space</h3>
-<div class="card">
-    <img class="planet" src="images/mars.jpg" />
-    <div class="description">Mars is the fourth planet from the sun.</div>
-    <div class="low-temperature">-225 °F</div>
-    <div class="high-temperature">70 °F</div>
-</div>
-```
-
-### Flex-Grow
-
-By default items won't expand (they have a flex-grow of 0). We can make items expand to fill the available space by using flex-grow: 1. Since the flex-direction is "row", the items expand to fill the available horizontal space
-
-```css
-.planet-default {
-    flex-grow: 0; /* default */
-}
-
-.planet-grow {
-    flex-grow: 1;
-}
-```
-
-Example Details:
-
-```css
-.card {
-    display: flex;
-    border: solid 3px maroon;
-    width: 500px;
-    height: 110px;
+    height: 130px;
     gap: 2px;
 }
 
 .card > div {
     display: inline-block;
-    padding: 20px;
+    padding: 15px;
     background: black;
     color: white;
     text-align: center;
@@ -462,25 +400,137 @@ Example Details:
 ```
 
 ```html
-<h3>Inner Planets (flex-grow: 0)</h3>
-<div class="card">
-    <div class="planet-default">
-        <img src="images/mercury.svg" /><br />Mercury
-    </div>
-    <div class="planet-default"><img src="images/venus.svg" /><br />Venus</div>
-    <div class="planet-default"><img src="images/earth.svg" /><br />Earth</div>
-    <div class="planet-default"><img src="images/mars.svg" /><br />Mars</div>
+<h3>Plenty of Space</h3>
+<div class="card card1">
+    <div class="planet"><img src="images/mercury.svg" /><br />Mercury (4,879 km)</div>
+    <div class="planet"><img src="images/venus.svg" /><br />Venus (12,104 km)</div>
+    <div class="planet earth"><img src="images/earth.svg" /><br />Earth (12,756 km)</div>
+    <div class="planet"><img src="images/mars.svg" /><br />Mars (6,792 km)</div>
 </div>
 <br />
 <br />
-<h3>Inner Planets (flex-grow: 1)</h3>
-<div class="card">
-    <div class="planet-grow"><img src="images/mercury.svg" /><br />Mercury</div>
-    <div class="planet-grow"><img src="images/venus.svg" /><br />Venus</div>
-    <div class="planet-grow"><img src="images/earth.svg" /><br />Earth</div>
-    <div class="planet-grow"><img src="images/mars.svg" /><br />Mars</div>
+<h3>Not Enough Space</h3>
+<div class="card card2">
+    <div class="planet"><img src="images/mercury.svg" /><br />Mercury (4,879 km)</div>
+    <div class="planet"><img src="images/venus.svg" /><br />Venus (12,104 km)</div>
+    <div class="planet earth"><img src="images/earth.svg" /><br />Earth (12,756 km)</div>
+    <div class="planet"><img src="images/mars.svg" /><br />Mars (6,792 km)</div>
 </div>
 ```
+
+### Flex-Grow
+
+By default items won't expand (they have a flex-grow of 0). We can make items expand to fill the available space by using flex-grow: 1. Since the flex-direction is "row", the Earth expands to fill the available horizontal space
+
+```css
+.planet {
+    flex-grow: 0; /* default */
+}
+
+.card2 .earth {
+    flex-grow: 1;
+}
+```
+
+Example Details:
+
+```css
+.card {
+    display: flex;
+    border: solid 3px maroon;
+    width: 600px;
+    height: 130px;
+    gap: 2px;
+}
+
+.card > div {
+    display: inline-block;
+    padding: 15px;
+    background: black;
+    color: white;
+    text-align: center;
+}
+
+.card img {
+    width: 50px;
+}
+```
+
+```html
+<h3>Inner Planets</h3>
+<div class="card card1">
+    <div class="planet"><img src="images/mercury.svg" /><br />Mercury</div>
+    <div class="planet"><img src="images/venus.svg" /><br />Venus</div>
+    <div class="planet earth"><img src="images/earth.svg" /><br />Earth</div>
+    <div class="planet"><img src="images/mars.svg" /><br />Mars</div>
+</div>
+<br />
+<br />
+<h3>Inner Planets</h3>
+<div class="card card2">
+    <div class="planet"><img src="images/mercury.svg" /><br />Mercury</div>
+    <div class="planet"><img src="images/venus.svg" /><br />Venus</div>
+    <div class="planet earth"><img src="images/earth.svg" /><br />Earth</div>
+    <div class="planet"><img src="images/mars.svg" /><br />Mars</div>
+</div>
+```
+
+### Implicit Minimum Size
+
+Sometimes things have a minimum size even if you don't specify it. For example, images and tables can have an implicit minimum width.
+
+In this case, even though flex-shrink is 1, the image won't shrink by default. You can see the details in the Firefox Inspector's Layout tab.
+
+However, you can remove the implicit minimum size and make the item fit within the flexbox. Simply set min-width to 0.
+
+```css
+.planet {
+    flex-shrink: 1; /* default */
+}
+
+.earth {
+    min-width: 0;
+}
+
+
+```
+
+Example Details:
+
+```css
+label {
+    width: 60px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    display: block;
+    border-bottom: solid 2px black;
+    font-weight: bold;
+}
+
+.card {
+    display: inline flex;
+    border: solid 7px red;
+    width: 120px;
+    height: 120px;
+    align-items: start;
+    margin-right: 100px;
+}
+```
+
+```html
+<h3>
+    Images are 100x100 pixels.
+</h3>
+<div class="card">
+    <label>Venus</label>
+    <img class="venus planet" src="images/venus-100px.jpg" />
+</div>
+<div class="card">
+    <label>Earth</label>
+    <img class="earth planet" src="images/earth-100px.jpg" />
+</div>
+```
+
 
 ### Max and Min
 
@@ -503,14 +553,14 @@ Example Details:
 .card {
     display: flex;
     border: solid 3px maroon;
-    width: 500px;
-    height: 110px;
+    width: 600px;
+    height: 100px;
     gap: 2px;
 }
 
 .card > div {
     display: inline-block;
-    padding: 20px;
+    padding: 15px;
     background: black;
     color: white;
     text-align: center;
@@ -530,67 +580,6 @@ Example Details:
         <img src="images/earth.svg" /><br />Earth
     </div>
     <div class="planet-grow"><img src="images/mars.svg" /><br />Mars</div>
-</div>
-```
-
-### Implicit Minimum Size
-
-Sometimes things have a minimum size even if you don't specify it. For example, images can force a minimum dimension to maintain their original aspect ratio. You can see the details in the Firefox Inspector's Layout tab.
-
-```css
-.mercury {
-}
-
-.venus {
-    min-height: 140px;
-}
-
-.earth {
-    width: 36px;
-}
-
-.mars {
-    width: 0;
-    flex-grow: 1;
-}
-```
-
-Example Details:
-
-```css
-h4 {
-    display: inline;
-}
-.card {
-    display: inline flex;
-    border: solid 7px red;
-    width: 50px;
-    height: 50px;
-    align-items: start;
-    margin-right: 100px;
-}
-```
-
-```html
-<h3>
-    All images are 100x100 pixels. The red container is 50x50 pixels (including
-    the 7px border).
-</h3>
-<h4>Mercury</h4>
-<div class="card">
-    <img class="mercury" src="images/mercury-100px.jpg" />
-</div>
-<h4>Venus</h4>
-<div class="card">
-    <img class="venus" src="images/venus-100px.jpg" />
-</div>
-<h4>Earth</h4>
-<div class="card">
-    <img class="earth" src="images/earth-100px.jpg" />
-</div>
-<h4>Mars</h4>
-<div class="card">
-    <img class="mars" src="images/mars-100px.jpg" />
 </div>
 ```
 
