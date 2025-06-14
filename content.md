@@ -402,18 +402,30 @@ Example Details:
 ```html
 <h3>Plenty of Space</h3>
 <div class="card card1">
-    <div class="planet"><img src="images/mercury.svg" /><br />Mercury (4,879 km)</div>
-    <div class="planet"><img src="images/venus.svg" /><br />Venus (12,104 km)</div>
-    <div class="planet earth"><img src="images/earth.svg" /><br />Earth (12,756 km)</div>
+    <div class="planet">
+        <img src="images/mercury.svg" /><br />Mercury (4,879 km)
+    </div>
+    <div class="planet">
+        <img src="images/venus.svg" /><br />Venus (12,104 km)
+    </div>
+    <div class="planet earth">
+        <img src="images/earth.svg" /><br />Earth (12,756 km)
+    </div>
     <div class="planet"><img src="images/mars.svg" /><br />Mars (6,792 km)</div>
 </div>
 <br />
 <br />
 <h3>Not Enough Space</h3>
 <div class="card card2">
-    <div class="planet"><img src="images/mercury.svg" /><br />Mercury (4,879 km)</div>
-    <div class="planet"><img src="images/venus.svg" /><br />Venus (12,104 km)</div>
-    <div class="planet earth"><img src="images/earth.svg" /><br />Earth (12,756 km)</div>
+    <div class="planet">
+        <img src="images/mercury.svg" /><br />Mercury (4,879 km)
+    </div>
+    <div class="planet">
+        <img src="images/venus.svg" /><br />Venus (12,104 km)
+    </div>
+    <div class="planet earth">
+        <img src="images/earth.svg" /><br />Earth (12,756 km)
+    </div>
     <div class="planet"><img src="images/mars.svg" /><br />Mars (6,792 km)</div>
 </div>
 ```
@@ -491,8 +503,6 @@ However, you can remove the implicit minimum size and make the item fit within t
 .earth {
     min-width: 0;
 }
-
-
 ```
 
 Example Details:
@@ -518,9 +528,7 @@ label {
 ```
 
 ```html
-<h3>
-    Images are 100x100 pixels.
-</h3>
+<h3>Images are 100x100 pixels.</h3>
 <div class="card">
     <label>Venus</label>
     <img class="venus planet" src="images/venus-100px.jpg" />
@@ -530,7 +538,6 @@ label {
     <img class="earth planet" src="images/earth-100px.jpg" />
 </div>
 ```
-
 
 ### Max and Min
 
