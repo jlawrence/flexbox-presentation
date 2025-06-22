@@ -475,7 +475,7 @@ By default, flex-shrink is 1, which means that items in a flex container will sh
 }
 
 .container2 {
-    width: 400px;
+    width: 420px;
 }
 
 .planet {
@@ -1404,7 +1404,7 @@ Example Details:
     flex-direction: row;
     height: 200px;
     border: solid 5px #42bee3;
-    width: 406px;
+    width: 410px;
 }
 
 .container div {
@@ -1631,6 +1631,7 @@ Notice that the entire group of rockets is vertically centered due to align-cont
 ```css
 .container {
     flex-wrap: wrap;
+    flex-direction: row;
     align-content: center;
     align-items: flex-end;
 }
