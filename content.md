@@ -91,7 +91,7 @@ I can easily add extra space between items by setting the gap.
 
 ### Flex-Direction
 
-These items are arranged as a row by default. But we can change the direction with "flex-direction" and arrange the items into a column. Notice how we use row-gap and column-gap.
+Flex items are arranged as a row by default. But we can change the direction with "flex-direction" and arrange the items into a column. Notice how we use row-gap and column-gap.
 
 ```css
 .row-container {
@@ -273,7 +273,7 @@ Example Details:
 
 ### Flex-Basis
 
-Flex-basis can be used to set suggested sizes. Flexbox will try to respect those sizes, but minimum widths take priority. In this example, the temperature items each take up 30% of the horizontal space. The description could not be shrunk to fit 1%, so flexbox made the description as small as it could.
+Flex-basis can be used to set suggested sizes. Flexbox will try to respect those sizes, but minimum widths take priority. In this example, the temperature items each take up 30% of the horizontal space. The description could not be shrunk to fit the requested 5%, so flexbox made the description as small as it could.
 
 ```css
 .low-temperature,
@@ -603,7 +603,7 @@ Example Details:
 
 Sometimes things have a minimum size even if you don't specify it. For example, images and tables can have an implicit minimum width.
 
-In this case, even though flex-shrink is 1, the image won't shrink by default. You can see the details in the Firefox Inspector's Layout tab.
+In this case, even though flex-shrink is 1, the image of Venus won't shrink by default. You can see the details in the Firefox Inspector's Layout tab.
 
 However, you can remove the implicit minimum size and make the item fit within the flexbox. Simply set min-width to 0.
 
@@ -679,7 +679,7 @@ Example Details:
 
 .container > div {
     display: inline-block;
-    padding: 15px;
+    padding: 15px 0;
     background: black;
     color: white;
     text-align: center;
@@ -851,7 +851,7 @@ What if any of the items have padding, margin, or borders? These are unshrinkabl
 
 In this example, Mercury has total padding of 60px. Even though it grows at the same rate as Mars, it starts out with 60px instead of 0, so it is larger in the end.
 
-A solution is to wrap each item in container div. Note that using a container div can affect the content inside it. In this case, I needed to modify the styles of each span inside the div to make it take up the full space occupied by the div.
+A solution is to wrap each item in a container div. Note that using a container div can affect the content inside it. In this case, I needed to modify the styles of each span inside the div to make it take up the full space occupied by the div.
 
 As a note, instead of using container divs, you could use grid layout instead of flexbox.
 
@@ -1481,7 +1481,7 @@ Example Details:
 
 ### Why Is There No Justify-Self?
 
-There is no justify-self because when using justify-content, all extra space is redistributed all at once. But when using align-items each item has its own private extra space.
+There is no justify-self because when using justify-content, all extra space is redistributed all at once. But when using align-items, each item has its own private extra space.
 
 However, you can strategically use auto margins to automatically fill up extra space. In this example, it appears that the first three moons are aligned left and Europa is aligned right. This is because Europa uses an auto left margin to use up all the space, thus pushing it to the right.
 
